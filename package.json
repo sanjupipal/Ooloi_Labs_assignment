@@ -1,0 +1,28 @@
+{
+  "name": "internshala",
+  "version": "1.0.0",
+  "description": "assingment",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjupipal/Ooloi_Labs_assignment.git"
+  },
+  "author": "Sanju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjupipal/Ooloi_Labs_assignment/issues"
+  },
+  "homepage": "https://github.com/sanjupipal/Ooloi_Labs_assignment#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
