@@ -15,17 +15,13 @@ mongoose
   .then(() => console.log("DB connected"))
   .catch((err) => console.log(err));
 
+app.use(bodyParser.json({ limit: "5mb", type: "application/json" }));
+
 // import routes
-// const authRoutes = require("./routes/auth");
-// const userRoutes = require("./routes/user");
-// const categoryRoutes = require("./routes/category");
-// const linkRoutes = require("./routes/link");
+const eventRoutes = require("./Routes/event");
 
 // middleware
-// app.use("/api", authRoutes);
-// app.use("/api", userRoutes);
-// app.use("/api", categoryRoutes);
-// app.use("/api", linkRoutes);
+app.use("/api", eventRoutes);
 
 const port = process.env.PORT;
 

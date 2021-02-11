@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-const { ObjectId } = mongoose.Schema;
-
 const eventSchema = new mongoose.Schema(
   {
     title: {
@@ -10,7 +8,7 @@ const eventSchema = new mongoose.Schema(
       required: true,
       max: 256,
     },
-    url: {
+    link: {
       type: String,
       trim: true,
       required: true,
@@ -18,38 +16,18 @@ const eventSchema = new mongoose.Schema(
     },
     date: {
       type: Date,
-      default: Date.now,
+      required: true,
     },
     about_event: {
       type: String,
       max: 256,
     },
-    speakers: [
-      {
-        name: {
-          type: String,
-        },
-        info: {
-          type: String,
-        },
-        pic: {
-          type: String,
-        },
-      },
-    ],
-    mentors: [
-      {
-        name: {
-          type: String,
-        },
-        info: {
-          type: String,
-        },
-        pis: {
-          type: String,
-        },
-      },
-    ],
+    speakers: {
+      type: [],
+    },
+    mentors: {
+      type: [],
+    },
     material_resources: {
       type: {},
     },
@@ -58,15 +36,11 @@ const eventSchema = new mongoose.Schema(
       max: 256,
     },
     organized_by: {
-      type: ObjectId,
-      ref: "user",
+      type: [],
     },
-    tags: [
-      {
-        type: ObjectId,
-        ref: "tags",
-      },
-    ],
+    tags: {
+      type: [],
+    },
   },
   { timestamps: true }
 );
